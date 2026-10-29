@@ -1,0 +1,38 @@
+# --- Python environments ---
+.venv/
+.venv-fuv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# --- Vendored engine (clone per machine, 4.7 GB incl. 4.6 GB weights) ---
+vendor/
+
+# --- Downloaded voice datasets + tool checkouts ---
+# Re-obtainable via FindUrVoicesPJSK; 1-2 GB of WAVs must not live in git.
+data/tools/
+data/miku_21/
+data/raw/
+data/normalized/
+
+# --- Generated audio ---
+out/
+*.wav
+*.mp3
+*.flac
+
+# --- Model checkpoints / trained artifacts ---
+*.ckpt
+*.pth
+*.safetensors
+*.onnx
+
+# --- Editor / OS noise ---
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# --- Local notes that may contain machine-specific paths ---
+*.log
