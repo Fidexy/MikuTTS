@@ -116,7 +116,15 @@ Target: **all downloaded**, curated **10–15 min** high-quality subset for trai
 
 Licence: engine MIT; voice data Fujita/Crypton — private use accepted risk (per your notes).
 
-## 5. §C — The katakana-English requirement (the interesting part)
+## 5. §C — English delivery: **SUPERSEDED, see `PLAN-V3-PHONEME-MASH.md`**
+
+> ⚠️ **This section was wrong and is kept only as a record.** It conflated *loanword
+> transliteration* (what a Japanese speaker does reading English: `world` → わーるど)
+> with *Vocaloid phoneme mashing* (English phonemes produced by a Japanese-trained voice:
+> `/w 3: r l d/`). Those are different targets and the second one is the actual goal.
+> Plan v3 replaces this section; milestone 3 built the first thing, not the second.
+
+The original (incorrect) framing follows.
 
 You want the **"Miku singing/talking English by bashing the phonetics"** sound — the
 classic JPN-Vocaloid English: `the` → *za*, `world` → *waarudo*, `with you` → *wizu yuu*.
@@ -192,7 +200,8 @@ TTS → loudness normalise → optional concat with offsets.
 | 0 | machine survey | done | — |
 | 1 | venv + engine + CPU weights + `pyopenjtalk` hello-world | 1–2 h | `g2p()` prints katakana phonemes |
 | 2 | Full Miku download + label conversion + QA script | 1–2 h (mostly download) | N clips, N labels, all valid |
-| 3 | **Zero-shot Miku narration with katakana-English** ← first real output | 30–45 min | you listen: does the accent land? |
+| 3 | **Zero-shot Miku narration** ← first real output | 30–45 min | you listen: does the accent land? |
+| 3b | **Phoneme-mash route (`text_lang='en'`)** — see `PLAN-V3-PHONEME-MASH.md` | 1 h | does it sound like Vocaloid English, not a Japanese speaker? |
 | 4 | Tune the bash: `e2k` + `ja_userdic` overrides | iterative | accent matches the aesthetic |
 | 5 | Overnight fine-tune on curated 10–15 min | 7–17 h unattended | beats zero-shot on similarity? |
 | 6 | (optional) v4 48 kHz profile for final renders; (optional) 1650 inference test | — | quality/speed call |
